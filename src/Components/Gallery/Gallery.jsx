@@ -36,7 +36,7 @@ const Gallery = () => {
     return (
         <>
         <div className='top-gallery' style={{display:'flex', justifyContent:'center'}}>
-            <h5 className="gallery-header" style={{display:'flex', justifyContent:'center'}} >
+            <h5 className="packages-header" style={{display:'flex', justifyContent:'center'}} >
                 <div className='happy-gallery'>
                 <span>H</span>
                 <span>A</span>

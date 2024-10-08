@@ -11,6 +11,7 @@ import Grid5 from '../../Images/Grid5.jpg';
 import Grid6 from '../../Images/Grid6.jpg';
 import Grid7 from '../../Images/Grid7.jpg';
 import Grid8 from '../../Images/Grid8.jpg';
+import { Link } from 'react-router-dom';
 
 const itemData = [
     { img: Grid1, title: 'Tamil Nadu Packages' },
@@ -50,16 +51,17 @@ const Packages = () => {
 
                 <ImageList variant="masonry" cols={3} gap={8}>
                     {itemData.map((item) => (
-                        <ImageListItem key={item.img} sx={{ position: 'relative', overflow: 'hidden' }}>
-                            <img
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                alt={item.title}
-                                loading="lazy"
-                                className="package-image"
-                            />
-                            <div className="image-title">{item.title}</div>
-                        </ImageListItem>
+                        <Link to='/packagedetails'>
+                            <ImageListItem key={item.img} sx={{ position: 'relative', overflow: 'hidden' }}>
+                                <img
+                                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    className="package-image"
+                                />
+                                <div className="image-title">{item.title}</div>
+                            </ImageListItem></Link>
                     ))}
                 </ImageList>
             </Box>

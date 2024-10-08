@@ -39,7 +39,7 @@ const PlanYourTrip = () => {
     return (
         <div className='whole-package'>
             <ToastContainer /> {/* Include the toast container */}
-            <h2 className="gallery-header" style={{ alignContent: 'center', marginTop: '15px' }}>
+            <h2 className="packages-header" style={{ alignContent: 'center', marginTop: '15px' }}>
                 <p style={{ textAlign: 'center' }}>
                     <span>C</span>
                     <span>O</span>
