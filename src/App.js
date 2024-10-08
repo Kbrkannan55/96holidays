@@ -7,19 +7,16 @@ import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import PackageDetails from './Components/PackageDetails/PackageDetails';
 
-
 function App() {
   return (
-    <>
-    <Navbar/>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path="/" element={<Home />}></Route> */}
-          <Route path='/' element={<PackageDetails/>}></Route>
-        </Routes>
-      </BrowserRouter>
-      <Footer/>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/packagedetails" element={<PackageDetails />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
