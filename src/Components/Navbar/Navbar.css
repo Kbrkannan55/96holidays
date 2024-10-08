@@ -1,0 +1,227 @@
+/* src/components/Navbar.css */
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'cursive', ;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around; /* Align logo and phone number */
+    align-items: center;
+    background-color: #006994; /* Vibrant holiday color */
+    padding: 15px 30px;
+    color: white;
+    position: relative;
+    z-index: 10;
+    background: url(../../Images/Awards2.jpg);
+    background-size:auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color for logo */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'slick', cursive; /* Classic holiday-style font */
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    font-family: cursive;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+}
+
+.nav-links li a:hover {
+    color: #FFD700; /* Gold color on hover */
+    transform: scale(1.1); /* Scale effect on hover */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Glowing effect on hover */
+}
+
+.phone-number {
+    font-family: cursive;
+    font-size: 1rem;
+    color: #FFD700; /* Gold color for phone number */
+    transition: color 0.3s ease; /* Transition for hover */
+    display: flex;
+    align-items: center; /* Align icon and text */
+}
+
+.phone-number:hover {
+    color: #FFCC00; /* Lighter gold on hover */
+}
+
+.phone-icon {
+    margin-right: 5px; /* Space between icon and text */
+    font-size: 1.2rem; /* Size of the phone icon */
+    transition: transform 0.3s ease; /* Transition for hover */
+}
+
+.phone-number:hover .phone-icon {
+    transform: scale(1.1); /* Scale effect on icon hover */
+}
+
+/* Hamburger Menu (hidden by default) */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Overlay effect when the menu is active */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    display: none;
+}
+
+.show-overlay {
+    display: block;
+    opacity: 1;
+}
+
+/* RESPONSIVENESS */
+
+/* Hide links and show hamburger on smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: -100vh; /* Hide above the screen */
+        right: 0;
+        background-color: #006994;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+        transition: all 0.5s ease;
+        display: none;
+        opacity: 0;
+        z-index: 10;
+    }
+
+    /* Show nav links with animation when the menu is active */
+    .nav-links.active {
+        display: flex;
+        top: 0; /* Slide down into view */
+        opacity: 1;
+    }
+
+    /* Each menu item slides in with delay */
+    .nav-links li {
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+    }
+
+    .nav-links li:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Show hamburger on smaller screens */
+    .hamburger {
+        display: block;
+        z-index: 11; /* To be above the overlay */
+    }
+
+    /* Display phone number at the top for mobile screens */
+    .phone-number {
+        display: none;
+        font-size: 1.1rem;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        z-index: 11; /* Above overlay */
+    }
+
+    .logo {
+        margin-left: 10px;
+        z-index: 11;
+    }
+}
+
+/* Adjustments for extra small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .phone-number {
+        font-size: 0.9rem;
+    }
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+    font-family: 'Cursive', cursive; /* Custom font for menu items */
+    position: relative; /* For the glowing effect */
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FFD700; /* Gold color for glow effect */
+    bottom: -5px; /* Position below the text */
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Transition for glow effect */
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1); /* Show the glow effect on hover */
+}

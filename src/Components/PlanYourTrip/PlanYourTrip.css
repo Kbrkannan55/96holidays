@@ -1,0 +1,118 @@
+.img-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.img {
+    flex: 1;
+    max-width: 45%;
+    min-width: 300px; /* Ensure the image doesn't shrink too much */
+}
+
+.flex-image {
+    width: 100%;
+    /* Allow the height to adapt based on width */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-your-trip-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #FAF3E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    min-width: 300px; /* Ensure the form container adapts on smaller screens */
+}
+
+.heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    color: #FF7E5F;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sub-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.75rem;
+    margin: 10px 0;
+    text-align: center;
+    color: #FD3A5E;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 500px;
+    margin: 0 auto; /* Center the form */
+}
+
+.input-field, .textarea-field {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #FD3A5E;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.submit-button {
+    background-color: #FD3A5E;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #FF7E5F;
+    transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .img-flex {
+        flex-direction: column; /* Stack image and form vertically on smaller screens */
+    }
+
+    .img {
+        max-width: 100%; /* Ensure the image takes full width on smaller screens */
+    }
+
+    .heading {
+        font-size: 1.75rem; /* Adjust heading font size for tablets */
+    }
+
+    .sub-heading {
+        font-size: 1.5rem; /* Adjust sub-heading font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.5rem; /* Further adjust for smaller devices */
+    }
+
+    .sub-heading {
+        font-size: 1.25rem;
+    }
+
+    .input-field, .textarea-field {
+        padding: 10px; /* Smaller padding for inputs */
+    }
+
+    .submit-button {
+        padding: 10px; /* Smaller padding for button */
+    }
+}

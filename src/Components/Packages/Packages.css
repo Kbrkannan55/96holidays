@@ -1,0 +1,98 @@
+/* Container styling */
+.packages-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Header styling */
+.packages-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem; /* Responsive font size */}
+
+/* Image title styling */
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem; /* Adjusted font size for responsiveness */
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+/* Show title on hover */
+.MuiImageListItem-root:hover .image-title {
+    opacity: 1;
+}
+
+/* Package image styling */
+.package-image {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Blur effect on hover */
+.MuiImageListItem-root:hover .package-image {
+    filter: blur(3px);
+}
+
+/* Individual letter styles for header */
+.packages-header span {
+    display: inline-block;
+    margin: 4px;
+    padding: 8px;
+    background-color: #FFA500;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for header letters */
+.packages-header span:hover {
+    background-color: #FFCC00;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .packages-header {
+        font-size: 1.5rem; /* Smaller font for mobile */
+    }
+
+    .image-title {
+        font-size: 1rem; /* Smaller font for mobile */
+    }
+
+    .MuiImageListItem-root {
+        margin-bottom: 16px; /* Add space between images */
+    }
+
+    .packages-header span {
+        margin: 2px;
+        padding: 6px;
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .packages-header {
+        font-size: 1.2rem; /* Further reduce font size for very small screens */
+    }
+
+    .image-title {
+        font-size: 0.9rem; /* Even smaller font size for very small screens */
+    }
+
+    .packages-header span {
+        font-size: 1rem; /* Small font size for mobile */
+    }
+}

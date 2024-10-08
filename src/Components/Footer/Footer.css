@@ -1,0 +1,105 @@
+
+.footer-container {
+    font-family: cursive;
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center; /* Center text */
+    position: relative; /* Relative positioning for absolute elements */
+}
+
+.footer-quote {
+    margin-bottom: 20px;
+}
+
+.footer-quote h3 {
+    font-size: 18px; /* Quote font size */
+    font-style: italic; /* Italic style for the quote */
+    color: #FFD700; /* Gold color for the quote */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-around; /* Space items evenly */
+    margin-bottom: 20px;
+}
+
+.footer-address {
+    max-width: 400px; /* Max width for address section */
+}
+
+.footer-center-content {
+    text-align: center; /* Center align text */
+    max-width: 300px; /* Max width for center content */
+}
+
+.registered-symbol {
+    font-size: 24px; /* Size for the registered symbol */
+}
+
+.footer-subscribe {
+    max-width: 300px; /* Max width for subscribe section */
+}
+
+.footer-subscribe h4 {
+    margin-bottom: 10px;
+}
+
+.footer-subscribe input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding for input */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between input and button */
+}
+
+.footer-subscribe button {
+    padding: 10px; /* Padding for button */
+    background-color: #FF7E5F; /* Button background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.footer-subscribe button:hover {
+    background-color: #FD3A5E; /* Darker shade on hover */
+}
+
+.footer-line {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+    margin: 20px 0; /* Margin above and below the line */
+}
+
+.footer-links {
+    margin-top: 20px; /* Space above links */
+    display: flex; /* Flexbox for centering links */
+    justify-content: center; /* Center links */
+}
+
+.social-icons {
+    display: flex; /* Flexbox for icons */
+    justify-content: center; /* Center icons */
+    gap: 15px; /* Space between icons */
+}
+
+.footer-link {
+    color: #FFD700; /* Gold color for links */
+    font-size: 24px; /* Size of icons */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.footer-link:hover {
+    color: #FF7E5F; /* Change color on hover */
+}
+
+.developed-by {
+    position: absolute; /* Absolute positioning */
+    bottom: 10px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    font-size: 14px; /* Font size for the developer text */
+    color: #ffffff; /* White color for the developer text */
+}

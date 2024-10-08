@@ -1,0 +1,100 @@
+/* Gallery slider container */
+.gallery-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    /* Adjust the width as necessary */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Wrapper for all slides */
+.gallery-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Each individual gallery item */
+.gallery-item {
+    flex: 0 0 25%;
+    /* 4 images per view */
+    box-sizing: border-box;
+    padding: 10px;
+    /* Spacing between images */
+}
+
+/* Each image in the gallery */
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures all images have equal size */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 0 0 33.33%;
+        /* Show 3 images per view */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 50%;
+        /* Show 2 images per view */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 0 0 100%;
+        /* Show 1 image per view */
+    }
+}
+
+/* Header styling */
+.gallery-header {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.gallery-header span {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    background: linear-gradient(135deg, #FF7E5F, #FD3A69);
+    /* Vibrant color gradient */
+    color: white;
+    border-radius: 8px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-header span:hover {
+    transform: translateY(-5px) rotate(2deg);
+    background: linear-gradient(135deg, #FF7E5F, #FFCC70);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-header span:nth-child(even) {
+    background: linear-gradient(135deg, #FD3A69, #FF7E5F);
+}
+
+@media (max-width: 498px) {
+    .happy-gallery{
+        display: none;
+    }
+    .gallery-divider{
+        display: flex;
+        justify-content: center;
+    }
+
+}
