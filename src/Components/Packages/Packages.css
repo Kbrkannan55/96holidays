@@ -96,3 +96,69 @@
         font-size: 1rem; /* Small font size for mobile */
     }
 }
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    /* Switch to flex layout with one image per row for smaller screens */
+    .MuiImageList-root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .MuiImageListItem-root {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .package-image {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .image-title {
+        font-size: 1rem;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+    }
+
+    .packages-header {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Display two images per row for very small screens */
+    .MuiImageList-root {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .MuiImageListItem-root {
+        width: 48%; /* Two images per row with a small gap */
+        margin: 1%;
+    }
+
+    .package-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-title {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .packages-header {
+        font-size: 1rem;
+    }
+}

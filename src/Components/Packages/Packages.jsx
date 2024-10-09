@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import './Packages.css'; // Ensure you import your CSS
+import './Packages.css';
+import { Link } from 'react-router-dom';
 import Grid1 from '../../Images/Grid1.jpg';
 import Grid2 from '../../Images/Grid2.jpg';
 import Grid3 from '../../Images/Grid3.jpg';
@@ -11,7 +12,6 @@ import Grid5 from '../../Images/Grid5.jpg';
 import Grid6 from '../../Images/Grid6.jpg';
 import Grid7 from '../../Images/Grid7.jpg';
 import Grid8 from '../../Images/Grid8.jpg';
-import { Link } from 'react-router-dom';
 
 const itemData = [
     { img: Grid1, title: 'Tamil Nadu Packages' },
@@ -33,12 +33,11 @@ const Packages = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 padding: '20px',
-                backgroundColor: '#f9f9f9', // Light background
+                backgroundColor: '#f9f9f9',
             }}
         >
             <Box sx={{ width: '90%', maxWidth: '1200px', overflow: 'hidden' }}>
-
-                <h5 className="packages-header" style={{ justifyContent: 'center' }}>
+                <h5 className="packages-header">
                     <span>P</span>
                     <span>A</span>
                     <span>C</span>
@@ -49,10 +48,10 @@ const Packages = () => {
                     <span>S</span>
                 </h5>
 
-                <ImageList variant="masonry" cols={3} gap={8}>
+                <ImageList variant="masonry" cols={3} gap={8} className="MuiImageList-root">
                     {itemData.map((item) => (
-                        <Link to='/packagedetails'>
-                            <ImageListItem key={item.img} sx={{ position: 'relative', overflow: 'hidden' }}>
+                        <Link to='/packagedetails' key={item.img}>
+                            <ImageListItem sx={{ position: 'relative', overflow: 'hidden' }} className="MuiImageListItem-root">
                                 <img
                                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                     src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -61,7 +60,8 @@ const Packages = () => {
                                     className="package-image"
                                 />
                                 <div className="image-title">{item.title}</div>
-                            </ImageListItem></Link>
+                            </ImageListItem>
+                        </Link>
                     ))}
                 </ImageList>
             </Box>

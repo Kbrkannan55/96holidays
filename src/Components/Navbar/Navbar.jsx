@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="logo">96 Holidays</div>
+           <div className="logo"> <Link to="/" style={{color:'#FFD700', textDecoration:'none'}}><p>96 Holidays</p></Link></div>
 
             <div className="hamburger" onClick={toggleMenu}>
                 {isOpen ? <FaTimes /> : <FaBars />}

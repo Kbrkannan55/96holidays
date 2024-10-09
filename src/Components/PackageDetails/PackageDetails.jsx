@@ -194,7 +194,7 @@ const PackageDetails = () => {
                                         <Typography style={{fontFamily:'cursive'}}>Day {item.day}</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                        <Typography>{item.detail}</Typography>
+                                        <Typography style={{fontFamily:'cursive'}}>{item.detail}</Typography>
                                     </AccordionDetails>
                                 </Accordion>
                             ))}
