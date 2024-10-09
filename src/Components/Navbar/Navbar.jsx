@@ -1,5 +1,3 @@
-// src/components/Navbar.js
-
 import React, { useState } from 'react';
 import './Navbar.css';
 import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
@@ -36,7 +34,7 @@ const Navbar = () => {
                     <Link to="#about" onClick={toggleMenu}>About Us</Link>
                 </li>
                 <li>
-                    <Link to="#contact" onClick={toggleMenu}>Contact</Link>
+                    <Link to="/contactus" onClick={toggleMenu}>Contact</Link>
                 </li>
             </ul>
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import './Packages.css';
 import { Link } from 'react-router-dom';
@@ -17,13 +16,12 @@ const itemData = [
     { img: Grid1, title: 'Tamil Nadu Packages' },
     { img: Grid8, title: 'Kerala Packages' },
     { img: Grid4, title: 'Karnataka Packages' },
-    { img: Grid1, title: 'Goa Packages' },
+    { img: Grid7, title: 'Goa Packages' },
     { img: Grid6, title: 'Himachal Pradesh Packages' },
-    { img: Grid7, title: 'Maharashtra Packages' },
+    { img: Grid2, title: 'Maharashtra Packages' },
     { img: Grid5, title: 'Delhi Packages' },
     { img: Grid3, title: 'Rajasthan Packages' },
-    { img: Grid5, title: 'Uttarakhand Packages' },
-    { img: Grid6, title: 'Punjab Packages' },
+    { img: Grid5, title: 'Uttarakhand Packages' }
 ];
 
 const Packages = () => {
@@ -48,22 +46,23 @@ const Packages = () => {
                     <span>S</span>
                 </h5>
 
-                <ImageList variant="masonry" cols={3} gap={8} className="MuiImageList-root">
+                <Box className="packages-container">
                     {itemData.map((item) => (
                         <Link to='/packagedetails' key={item.img}>
-                            <ImageListItem sx={{ position: 'relative', overflow: 'hidden' }} className="MuiImageListItem-root">
+                            <ImageListItem className="MuiImageListItem-root" style={{height:'200px'}}>
                                 <img
                                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                     src={`${item.img}?w=248&fit=crop&auto=format`}
                                     alt={item.title}
                                     loading="lazy"
                                     className="package-image"
+                                    
                                 />
                                 <div className="image-title">{item.title}</div>
                             </ImageListItem>
                         </Link>
                     ))}
-                </ImageList>
+                </Box>
             </Box>
         </Box>
     );

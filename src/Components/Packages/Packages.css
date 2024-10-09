@@ -1,59 +1,20 @@
-/* Container styling */
-.packages-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-/* Header styling */
 .packages-header {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
     color: #333;
     font-family: 'Arial', sans-serif;
-    font-size: 1.5rem; /* Responsive font size */}
-
-/* Image title styling */
-.image-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.2rem; /* Adjusted font size for responsiveness */
-    font-weight: bold;
-    text-align: center;
-    opacity: 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
-}
-
-/* Show title on hover */
-.MuiImageListItem-root:hover .image-title {
-    opacity: 1;
-}
-
-/* Package image styling */
-.package-image {
-    width: 100%;
-    height: auto;
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Blur effect on hover */
-.MuiImageListItem-root:hover .package-image {
-    filter: blur(3px);
+    font-size: 1.5rem; /* Increased font size for emphasis */
 }
 
 /* Individual letter styles for header */
 .packages-header span {
     display: inline-block;
-    margin: 4px;
+    margin: 0 4px;
     padding: 8px;
     background-color: #FFA500;
     color: white;
     border-radius: 5px;
-    font-family: 'Arial', sans-serif;
     transition: background-color 0.3s ease;
 }
 
@@ -62,103 +23,63 @@
     background-color: #FFCC00;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Container for the grid */
+.packages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 20px;
+}
+
+/* Image container box styling */
+.MuiImageListItem-root {
+    position: relative; /* Necessary for positioning text */
+    border-radius: 10px; /* Rounded corners for the box */
+    overflow: hidden; /* Ensure the content stays within the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #fff; /* Background color to make the box distinct */
+}
+
+/* Hover effect for the image box */
+.MuiImageListItem-root:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Image styling */
+.package-image {
+    height: 200px; /* Set a fixed height for all images */
+    width: 100%; /* Ensure the images take full width of the box */
+    object-fit: cover;
+}
+
+/* Text overlay */
+.image-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Show text on hover */
+.MuiImageListItem-root:hover .image-title {
+    opacity: 1; /* Show title on hover */
+}
+
+/* Media queries for responsive behavior */
 @media (max-width: 768px) {
-    .packages-header {
-        font-size: 1.5rem; /* Smaller font for mobile */
-    }
-
-    .image-title {
-        font-size: 1rem; /* Smaller font for mobile */
-    }
-
-    .MuiImageListItem-root {
-        margin-bottom: 16px; /* Add space between images */
-    }
-
-    .packages-header span {
-        margin: 2px;
-        padding: 6px;
-        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    .packages-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
-@media (max-width: 480px) {
-    .packages-header {
-        font-size: 1.2rem; /* Further reduce font size for very small screens */
-    }
-
-    .image-title {
-        font-size: 0.9rem; /* Even smaller font size for very small screens */
-    }
-
-    .packages-header span {
-        font-size: 1rem; /* Small font size for mobile */
-    }
-}
-
-/* Responsive adjustments for mobile screens */
-@media (max-width: 768px) {
-    /* Switch to flex layout with one image per row for smaller screens */
-    .MuiImageList-root {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .MuiImageListItem-root {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-
-    .package-image {
-        width: 100%;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .image-title {
-        font-size: 1rem;
-        padding: 10px;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        width: 100%;
-    }
-
-    .packages-header {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Display two images per row for very small screens */
-    .MuiImageList-root {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .MuiImageListItem-root {
-        width: 48%; /* Two images per row with a small gap */
-        margin: 1%;
-    }
-
-    .package-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .image-title {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    .packages-header {
-        font-size: 1rem;
+@media (max-width: 576px) {
+    .packages-container {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }
 }

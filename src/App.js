@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import PackageDetails from './Components/PackageDetails/PackageDetails';
+import ContactUs from './Components/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/packagedetails" element={<PackageDetails />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
       <Footer />
     </BrowserRouter>

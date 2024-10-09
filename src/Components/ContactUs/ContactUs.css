@@ -1,0 +1,77 @@
+/* General Styles */
+.contact-section {
+    background-color: #f4f4f4;
+  
+}
+
+.contact-bg {
+    padding: 40px; /* Padding for the background section */
+    text-align: center; /* Center align text */
+    background: url(../../Images/contact-bg.jpg);
+    background-size: cover;
+}
+
+.line {
+    display: flex; /* Flex display for the line */
+    justify-content: center; /* Center the line */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.line div {
+    width: 30px; /* Width of each line segment */
+    height: 5px; /* Height of each line segment */
+    background-color: #f7327a; /* Color of the line */
+    margin: 0 5px; /* Margin between segments */
+}
+
+.contact-body {
+    max-width: 1320px; /* Max width for the contact body */
+    margin: 0 auto; /* Center align the body */
+    padding: 20px; /* Padding around the body */
+    display: flex; /* Flex display for layout */
+    flex-direction: column; /* Column layout */
+    gap: 20px; /* Space between elements */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    display: grid; /* Grid layout for contact info */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around the info section */
+}
+
+.contact-info div {
+    padding: 15px; /* Padding inside each info box */
+    border: 1px solid #c7c7c7; /* Border for each box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* Background color for each box */
+    text-align: center; /* Center align text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-info span {
+    display: block; /* Block display for spans */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+/* Map Section Styles */
+.map {
+    margin: 20px 0; /* Margin around the map */
+    text-align: center; /* Center align map */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-body {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .contact-info div {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
