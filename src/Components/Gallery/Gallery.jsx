@@ -29,31 +29,31 @@ const Gallery = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 1000);
+        }, 1100);
         return () => clearInterval(interval);
     }, []);
 
     return (
         <>
-        <div className='top-gallery' style={{display:'flex', justifyContent:'center'}}>
-            <h5 className="packages-header" style={{display:'flex', justifyContent:'center'}} >
-                <div className='happy-gallery'>
-                <span>H</span>
-                <span>A</span>
-                <span>P</span>
-                <span>P</span>
-                <span>Y</span>&nbsp;</div>
-                <div className='gallery-divider' >
-                <span>C</span>
-                <span>L</span>
-                <span>I</span>
-                <span>E</span>
-                <span>N</span>
-                <span>T</span>
-                <span>S</span>
-                </div>
-            </h5>
-</div>
+            <div className='top-gallery' style={{ display: 'flex', justifyContent: 'center' }}>
+                <h5 className="packages-header" style={{ display: 'flex', justifyContent: 'center' }} >
+                    <div className='happy-gallery'>
+                        <span>H</span>
+                        <span>A</span>
+                        <span>P</span>
+                        <span>P</span>
+                        <span>Y</span>&nbsp;</div>
+                    <div className='gallery-divider' >
+                        <span>C</span>
+                        <span>L</span>
+                        <span>I</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>T</span>
+                        <span>S</span>
+                    </div>
+                </h5>
+            </div>
             <div className="gallery-slider">
                 <div className="gallery-wrapper" style={{ transform: `translateX(-${currentIndex * 25}%)` }}>
                     {images.map((image) => (
